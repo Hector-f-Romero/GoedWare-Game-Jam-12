@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Invader : MonoBehaviour
+public class Proyectil : MonoBehaviour
 {
-    public float speed = 5.0f;
+    public float speed = 10.0f;
     private Vector3 direction = Vector2.down;
 
     private void Update()
@@ -16,7 +16,7 @@ public class Invader : MonoBehaviour
     {
         if(collider.CompareTag("Player"))
         {
-            Debug.Log("Trim");
+            Debug.Log("Fuego");
             // if (collider.GetComponent<Health>() != null)
             // {
             //     Health health = collider.GetComponent<Health>();
