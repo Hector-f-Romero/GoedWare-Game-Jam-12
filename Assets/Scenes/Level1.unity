@@ -1195,6 +1195,14 @@ PrefabInstance:
       propertyPath: _buletGO
       value: 
       objectReference: {fileID: 3008836247133952291, guid: 0df55204069ffb0438af27f50154d070, type: 3}
+    - target: {fileID: 6009899876875234772, guid: aa8326150ec65284a9781ba680ea923e, type: 3}
+      propertyPath: _isShooting
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6009899876875234772, guid: aa8326150ec65284a9781ba680ea923e, type: 3}
+      propertyPath: _shootCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
