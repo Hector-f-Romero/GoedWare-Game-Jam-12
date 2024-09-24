@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1218437695394771422}
   - component: {fileID: 6009899876875234772}
+  - component: {fileID: 5240884665849059923}
   - component: {fileID: 7985144830392969887}
   m_Layer: 0
   m_Name: Player
@@ -83,6 +84,22 @@ MonoBehaviour:
   _isShooting: 0
   _buletGO: {fileID: 0}
   _buletSpawnGO: {fileID: 2175128204931084912}
+  _shootCooldown: 0
+--- !u!114 &5240884665849059923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2766757869500799224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 249e49199116f78489dd884654d2fee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerScore: 0
+  _timeAlive: 0
+  _scoreTextGO: {fileID: 0}
 --- !u!61 &7985144830392969887
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -199,7 +216,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 335908605
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -451392370, guid: c5b46e74bdca93648afb611680e08f8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
