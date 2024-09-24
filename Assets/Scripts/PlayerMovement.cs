@@ -4,18 +4,55 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    [Header("Movement")]
     [SerializeField] private float _speed = 5f;
+    [SerializeField] private float _maxSpeed = 10f;
+
+    [Header("Shoot")]
+    [SerializeField] private bool _isShooting;
+    [SerializeField] private GameObject _buletGO;
+    [SerializeField] private GameObject _buletSpawnGO;
+    [SerializeField] private float _shootCooldown;
+    private bool _canShoot = true;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.A))
+       
+        // Handle the player movement.
+        MoveShip();
+
+        if (Input.GetKey(KeyCode.Space) && _canShoot)
         {
-            this.transform.position += Vector3.left * this._speed * Time.deltaTime;
-        }else if(Input.GetKey(KeyCode.D))
-        {
-            this.transform.position += Vector3.right * this._speed * Time.deltaTime;
+            StartCoroutine(Shoot());
         }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            _isShooting = false;
+        }
+    }
+
+    private void MoveShip() {
+
+        float xPos = Input.GetAxis("Horizontal");
+        float yPos = Input.GetAxis("Vertical");
+
+        Vector3 movement = new Vector3(xPos, yPos,0) * _speed * Time.deltaTime;
+        transform.Translate(movement);
+       
+    }
+
+    private IEnumerator Shoot()
+    {
+        Debug.Log("PIUM PIUM");
+        Instantiate(_buletGO, _buletSpawnGO.transform.position, Quaternion.identity);
+
+        _isShooting = true;
+        _canShoot=false;
+
+        yield return new WaitForSeconds(_shootCooldown);
+
+        _canShoot = true;
     }
 }
