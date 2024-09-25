@@ -16,18 +16,12 @@ public class Proyectil : MonoBehaviour
     {
         if(collider.CompareTag("Player"))
         {
-            Debug.Log("Fuego");
-            // if (collider.GetComponent<Health>() != null)
-            // {
-            //     Health health = collider.GetComponent<Health>();
-            //     //health.Damage(damage);
-            //     health.Damage(damage);
-            //     Destroy(gameObject);    
-            // }
+            //Debug.Log("Fuego");
+            GameManager.Instance.LoseLife();
         }
         if(collider.CompareTag("Out"))
         {
-            Debug.Log("Fuera de orbita");
+            //Debug.Log("Fuera de orbita");
             Destroy(gameObject);  
         }
     }

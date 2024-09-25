@@ -2121,10 +2121,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1318070142}
     - target: {fileID: 5240884665849059923, guid: aa8326150ec65284a9781ba680ea923e, type: 3}
-      propertyPath: _scoreTextGO
-      value: 
-      objectReference: {fileID: 1318070142}
-    - target: {fileID: 5240884665849059923, guid: aa8326150ec65284a9781ba680ea923e, type: 3}
       propertyPath: _timeAliveText
       value: 
       objectReference: {fileID: 943306731}

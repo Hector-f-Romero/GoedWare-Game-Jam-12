@@ -123,7 +123,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -430209933
+  m_SortingLayerID: 1192577641
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1620991174, guid: c5b46e74bdca93648afb611680e08f8a, type: 3}
@@ -195,6 +195,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  _pointsToGive: 10
+  OnGivenPoints:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5240884665849059923, guid: aa8326150ec65284a9781ba680ea923e, type: 3}
+        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
+        m_MethodName: IncreaseScore
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!50 &-2718852134145159057
 Rigidbody2D:
   serializedVersion: 4
