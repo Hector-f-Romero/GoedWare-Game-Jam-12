@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator Shoot()
     {
-        Debug.Log("PIUM PIUM");
+        //Debug.Log("PIUM PIUM");
         Instantiate(_buletGO, _buletSpawnGO.transform.position, Quaternion.identity);
 
         _isShooting = true;

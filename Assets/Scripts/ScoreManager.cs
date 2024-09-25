@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class GivePointsEvent : UnityEvent<int> { }
@@ -17,10 +18,8 @@ public class ScoreManager : MonoBehaviour
 
     [Space(10)]
     [Header("UI elements")]
-    [SerializeField] private TextMeshProUGUI _scoreText;
+    [SerializeField] private Text _scoreText;
     [SerializeField] private TextMeshProUGUI _timeAliveText;
-
-
 
     // Update is called once per frame
     void Update()
@@ -38,7 +37,9 @@ public class ScoreManager : MonoBehaviour
     public void IncreaseScore(int points = 10)
     {
         _playerScore += points;
-        _scoreText.text = _playerScore.ToString();
+        Debug.Log(_scoreText);
+        
+        //_scoreText.text = _playerScore.ToString();
     }
 
     void HandleAliveTime()

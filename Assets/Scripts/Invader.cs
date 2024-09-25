@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Invader : MonoBehaviour
 {
@@ -16,10 +17,11 @@ public class Invader : MonoBehaviour
 
     private void Start()
     {
-        if (OnGivenPoints == null)
+        ScoreManager scoreManager = FindObjectOfType<ScoreManager>();
+
+        if (scoreManager != null)
         {
-            Debug.Log("Evento nulo");
-            OnGivenPoints = new GivePointsEvent();
+            OnGivenPoints.AddListener(scoreManager.IncreaseScore);
         }
     }
     private void Update()
