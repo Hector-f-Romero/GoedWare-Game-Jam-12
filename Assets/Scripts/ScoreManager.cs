@@ -37,9 +37,7 @@ public class ScoreManager : MonoBehaviour
     public void IncreaseScore(int points = 10)
     {
         _playerScore += points;
-        Debug.Log(_scoreText);
-        
-        //_scoreText.text = _playerScore.ToString();
+        _scoreText.text = _playerScore.ToString();
     }
 
     void HandleAliveTime()

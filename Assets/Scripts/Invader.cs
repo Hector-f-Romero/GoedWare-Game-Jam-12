@@ -29,12 +29,6 @@ public class Invader : MonoBehaviour
         {
             ChangeSprite(PowerUpManager.Instance.GetPowerUpDuration());
         }
-        // ScoreManager scoreManager = FindObjectOfType<ScoreManager>();
-
-        // if (scoreManager != null)
-        // {
-        //     OnGivenPoints.AddListener(scoreManager.IncreaseScore);
-        // }
     }
     private void Update()
     {

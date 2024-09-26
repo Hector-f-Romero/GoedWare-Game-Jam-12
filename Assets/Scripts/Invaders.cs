@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using static UnityEditor.Handles;
 
 public class Invaders : MonoBehaviour
 {
@@ -15,12 +16,16 @@ public class Invaders : MonoBehaviour
     [SerializeField] private float tiempoPower;
     private float tiempoSiguientePower;
 
+    private ScoreManager scoreManager;
+
     private void Start()
     {
         maxX = puntos.Max(punto => punto.position.x);
         minX = puntos.Min(punto => punto.position.x);
         maxY = puntos.Max(punto => punto.position.y);
         minY = puntos.Min(punto => punto.position.y);
+
+        scoreManager = FindObjectOfType<ScoreManager>();
     }
     private void Update()
     {
@@ -44,7 +49,11 @@ public class Invaders : MonoBehaviour
         int numeroEnemigo = Random.Range(0, enemigos.Length);
         Vector2 posicionAleatoria = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
 
-        Instantiate(enemigos[numeroEnemigo], posicionAleatoria, Quaternion.identity);
+        GameObject invaderInstance = Instantiate(enemigos[numeroEnemigo], posicionAleatoria, Quaternion.identity);
+
+        Invader invaderScript = invaderInstance.GetComponent<Invader>();
+        // Subscribe the new Invader to events to avoid errors
+        invaderScript.OnGivenPoints.AddListener(scoreManager.IncreaseScore);
     }
     private void CrearPowerUp()
     {
