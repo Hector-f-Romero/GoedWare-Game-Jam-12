@@ -11,6 +11,10 @@ public class Invaders : MonoBehaviour
     [SerializeField] private float tiempoEnemigos;
     private float tiempoSiguienteEnemigo;
 
+    [SerializeField] private GameObject[] poweUps;
+    [SerializeField] private float tiempoPower;
+    private float tiempoSiguientePower;
+
     private void Start()
     {
         maxX = puntos.Max(punto => punto.position.x);
@@ -22,11 +26,17 @@ public class Invaders : MonoBehaviour
     {
         
         tiempoSiguienteEnemigo += Time.deltaTime;
+        tiempoSiguientePower += Time.deltaTime;
 
         if( tiempoSiguienteEnemigo >= tiempoEnemigos)
         {
             tiempoSiguienteEnemigo = 0;
             CrearEnemigo();
+        }
+        if( tiempoSiguientePower >= tiempoPower)
+        {
+            tiempoSiguientePower = 0;
+            CrearPowerUp();
         }
     }
     private void CrearEnemigo()
@@ -36,5 +46,11 @@ public class Invaders : MonoBehaviour
 
         Instantiate(enemigos[numeroEnemigo], posicionAleatoria, Quaternion.identity);
     }
+    private void CrearPowerUp()
+    {
+        int numeroPower = Random.Range(0, poweUps.Length);
+        Vector2 posicionAleatoria = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
 
+        Instantiate(poweUps[numeroPower], posicionAleatoria, Quaternion.identity);
+    }
 }

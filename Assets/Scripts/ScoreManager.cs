@@ -18,7 +18,7 @@ public class ScoreManager : MonoBehaviour
 
     [Space(10)]
     [Header("UI elements")]
-    [SerializeField] private Text _scoreText;
+    [SerializeField] private TextMeshProUGUI _scoreText;
     [SerializeField] private TextMeshProUGUI _timeAliveText;
 
     // Update is called once per frame

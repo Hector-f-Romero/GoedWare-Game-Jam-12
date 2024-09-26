@@ -8,6 +8,11 @@ public class Invader : MonoBehaviour
 {
     public float speed = 5.0f;
     private Vector3 direction = Vector2.down;
+    public SpriteRenderer spriteRenderer; 
+    public Sprite newSprite;
+    // public Vector3 newSpriteScale = new Vector3(1f, 1f, 1f);
+    private Sprite originalSprite;
+    // private Vector3 originalScale; 
 
     [SerializeField] private int _pointsToGive = 10;
 
@@ -17,12 +22,19 @@ public class Invader : MonoBehaviour
 
     private void Start()
     {
-        ScoreManager scoreManager = FindObjectOfType<ScoreManager>();
+        originalSprite = spriteRenderer.sprite;
+        // originalScale = transform.localScale;
 
-        if (scoreManager != null)
+        if (PowerUpManager.Instance != null && PowerUpManager.Instance.IsPowerUpActive())
         {
-            OnGivenPoints.AddListener(scoreManager.IncreaseScore);
+            ChangeSprite(PowerUpManager.Instance.GetPowerUpDuration());
         }
+        // ScoreManager scoreManager = FindObjectOfType<ScoreManager>();
+
+        // if (scoreManager != null)
+        // {
+        //     OnGivenPoints.AddListener(scoreManager.IncreaseScore);
+        // }
     }
     private void Update()
     {
@@ -46,5 +58,22 @@ public class Invader : MonoBehaviour
             OnGivenPoints.Invoke(_pointsToGive);
             //Destroy(gameObject);
         }
+    }
+    public void ChangeSprite(float duration)
+    {
+        spriteRenderer.sprite = newSprite;
+        // transform.localScale = newSpriteScale;
+
+        StartCoroutine(ResetSpriteAfterTime(duration));
+    }
+
+    private IEnumerator ResetSpriteAfterTime(float duration)
+    {
+        // Esperar el tiempo especificado
+        yield return new WaitForSeconds(duration);
+
+        // Volver al sprite original
+        spriteRenderer.sprite = originalSprite;
+        // transform.localScale = originalScale;
     }
 }

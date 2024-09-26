@@ -18,6 +18,7 @@ public class Proyectil : MonoBehaviour
         {
             //Debug.Log("Fuego");
             GameManager.Instance.LoseLife();
+            Destroy(gameObject); 
         }
         if(collider.CompareTag("Out"))
         {
