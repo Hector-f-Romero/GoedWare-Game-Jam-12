@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerUpManager : MonoBehaviour
 {
-    public static PowerUpManager Instance;  // Singleton para acceder desde cualquier parte
+    public static PowerUpManager Instance;  
     private bool isPowerUpActive = false;
     private float powerUpDuration = 10f;
 
@@ -14,11 +14,11 @@ public class PowerUpManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);  // Mantener este objeto al cargar nuevas escenas
+            //DontDestroyOnLoad(gameObject);  // Mantener este objeto al cargar nuevas escenas
         }
         else
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 

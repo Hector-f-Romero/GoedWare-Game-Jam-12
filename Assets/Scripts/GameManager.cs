@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     public HUD hUD;
     private int lifes = 3;
     public DeathMenu deathMenu;
-
     [SerializeField] private GameObject player;
 
 

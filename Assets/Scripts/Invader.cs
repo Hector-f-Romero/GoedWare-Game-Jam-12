@@ -10,9 +10,9 @@ public class Invader : MonoBehaviour
     private Vector3 direction = Vector2.down;
     public SpriteRenderer spriteRenderer; 
     public Sprite newSprite;
-    // public Vector3 newSpriteScale = new Vector3(1f, 1f, 1f);
+    public Vector3 newSpriteScale = new Vector3(1f, 1f, 1f);
     private Sprite originalSprite;
-    // private Vector3 originalScale; 
+    private Vector3 originalScale; 
 
     [SerializeField] private int _pointsToGive = 10;
 
@@ -23,7 +23,7 @@ public class Invader : MonoBehaviour
     private void Start()
     {
         originalSprite = spriteRenderer.sprite;
-        // originalScale = transform.localScale;
+        originalScale = transform.localScale;
 
         if (PowerUpManager.Instance != null && PowerUpManager.Instance.IsPowerUpActive())
         {
@@ -50,13 +50,13 @@ public class Invader : MonoBehaviour
         if (collider.gameObject.CompareTag("Bullet"))
         {
             OnGivenPoints.Invoke(_pointsToGive);
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
     public void ChangeSprite(float duration)
     {
         spriteRenderer.sprite = newSprite;
-        // transform.localScale = newSpriteScale;
+        transform.localScale = newSpriteScale;
 
         StartCoroutine(ResetSpriteAfterTime(duration));
     }
@@ -68,6 +68,6 @@ public class Invader : MonoBehaviour
 
         // Volver al sprite original
         spriteRenderer.sprite = originalSprite;
-        // transform.localScale = originalScale;
+        transform.localScale = originalScale;
     }
 }

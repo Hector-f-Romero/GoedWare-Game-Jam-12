@@ -148,6 +148,7 @@ MonoBehaviour:
   speed: 5
   spriteRenderer: {fileID: 3720913778728611322}
   newSprite: {fileID: -1394866056, guid: a78291be57f4a7741b4d5f1d94e80f2f, type: 3}
+  newSpriteScale: {x: 35, y: 35, z: 35}
   _pointsToGive: 10
   OnGivenPoints:
     m_PersistentCalls:
