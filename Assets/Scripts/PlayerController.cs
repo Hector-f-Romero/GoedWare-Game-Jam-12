@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] private float _speed = 5f;
-    [SerializeField] private float _maxSpeed = 10f;
+    public float speed = 5f;
 
     [Header("Shoot")]
     [SerializeField] private bool _isShooting;
@@ -38,7 +37,7 @@ public class PlayerController : MonoBehaviour
         float xPos = Input.GetAxis("Horizontal");
         float yPos = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(xPos, yPos,0) * _speed * Time.deltaTime;
+        Vector3 movement = new Vector3(xPos, yPos,0) * speed * Time.deltaTime;
         transform.Translate(movement);
        
     }
