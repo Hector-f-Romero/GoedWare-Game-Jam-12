@@ -9,8 +9,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Shoot")]
     [SerializeField] private bool _isShooting;
-    [SerializeField] private GameObject _buletGO;
-    [SerializeField] private GameObject _buletSpawnGO;
+    public GameObject bulletGO;
+    [SerializeField] private GameObject _bulletSpawnGO;
     [SerializeField] private float _shootCooldown;
     private bool _canShoot = true;
 
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator Shoot()
     {
         //Debug.Log("PIUM PIUM");
-        Instantiate(_buletGO, _buletSpawnGO.transform.position, Quaternion.identity);
+        Instantiate(bulletGO, _bulletSpawnGO.transform.position, Quaternion.identity);
 
         _isShooting = true;
         _canShoot=false;

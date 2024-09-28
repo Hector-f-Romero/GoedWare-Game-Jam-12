@@ -100,6 +100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletSpeed: 20
   _lifeTime: 4
+  _curveBulletSpeed: 0.31
+  _curveLoopSize: 0.15
+  _curveLoopSpeed: -0.45
 --- !u!61 &7990869295857607460
 BoxCollider2D:
   m_ObjectHideFlags: 0
