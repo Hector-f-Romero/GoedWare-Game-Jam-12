@@ -10,10 +10,12 @@ public class GameManager : MonoBehaviour
     private int lifes = 3;
     public DeathMenu deathMenu;
     [SerializeField] private GameObject player;
+    public AudioManager audioManager;
 
 
     public void Awake()
     {
+        audioManager.PlayMusic(0);
         if (Instance == null)
         {
             Instance = this;
@@ -36,6 +38,7 @@ public class GameManager : MonoBehaviour
         // Change player color to bring feedback
         SpriteRenderer childSpriteRenderer = player.transform.GetChild(0).GetComponent<SpriteRenderer>();
         StartCoroutine(ChangeColorTemporarily(childSpriteRenderer, childSpriteRenderer.color));
+        audioManager.PlaySFX(5);
 
         hUD.DeactiveLife(lifes);
     }

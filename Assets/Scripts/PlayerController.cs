@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject _bulletSpawnGO;
     [SerializeField] private float _shootCooldown;
     private bool _canShoot = true;
+    public AudioManager audioManager;
 
     // Update is called once per frame
     void Update()
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator Shoot()
     {
+        audioManager.PlaySFX(1);
         //Debug.Log("PIUM PIUM");
         Instantiate(bulletGO, _bulletSpawnGO.transform.position, Quaternion.identity);
 

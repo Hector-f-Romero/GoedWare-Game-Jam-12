@@ -48,7 +48,7 @@ MonoBehaviour:
   - {fileID: 7665206402644666046}
   proyectil:
   - {fileID: 7364384987325967534, guid: b05e373faa933214da5c7ada5fe628be, type: 3}
-  tiempoProyectiles: 0.3
+  tiempoProyectiles: 1
 --- !u!1 &6880409026281785255
 GameObject:
   m_ObjectHideFlags: 0

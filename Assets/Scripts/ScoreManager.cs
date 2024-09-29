@@ -14,7 +14,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private int _playerScore = 0;
     [SerializeField] private float _timeAlive = 0f;
     private string elapsedFormatTime;
-
+    public AudioManager audioManager;
 
     [Space(10)]
     [Header("UI elements")]
@@ -36,6 +36,7 @@ public class ScoreManager : MonoBehaviour
 
     public void IncreaseScore(int points = 10)
     {
+        audioManager.PlaySFX(2);
         _playerScore += points;
         _scoreText.text = _playerScore.ToString();
     }

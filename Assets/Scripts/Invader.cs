@@ -51,6 +51,7 @@ public class Invader : MonoBehaviour
         {
             OnGivenPoints.Invoke(_pointsToGive);
             Destroy(gameObject);
+            Destroy(collider.gameObject);
         }
     }
     public void ChangeSprite(float duration)

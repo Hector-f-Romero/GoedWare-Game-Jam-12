@@ -133,11 +133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199ff937b9a708f429c19d0ba6932bfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 20
-  _maxSpeed: 10
+  speed: 5
   _isShooting: 1
-  _buletGO: {fileID: 3008836247133952291, guid: 0df55204069ffb0438af27f50154d070, type: 3}
-  _buletSpawnGO: {fileID: 3477904265326516693}
+  bulletGO: {fileID: 3008836247133952291, guid: 0df55204069ffb0438af27f50154d070, type: 3}
+  _bulletSpawnGO: {fileID: 3477904265326516693}
   _shootCooldown: 0.5
 --- !u!114 &4645127529585668337
 MonoBehaviour:

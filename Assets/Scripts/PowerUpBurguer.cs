@@ -8,6 +8,7 @@ public class PowerUpBurguer : MonoBehaviour
     public float speed = 3.0f;
     public float rotationSpeed = 100.0f;
     private Vector3 direction = Vector2.down;
+    // public AudioManager audioManager;
 
     private void Update()
     {
@@ -28,7 +29,7 @@ public class PowerUpBurguer : MonoBehaviour
             {
                 invader.ChangeSprite(powerUpDuration);
             }
-
+            // audioManager.PlayAudio(2);
             // Destruir el power-up tras recogerlo
             Destroy(gameObject);
         }

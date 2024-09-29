@@ -7,6 +7,7 @@ public class PowerUpManager : MonoBehaviour
     public static PowerUpManager Instance;  
     private bool isPowerUpActive = false;
     private float powerUpDuration = 10f;
+    public AudioManager audioManager;
 
     private void Awake()
     {
@@ -28,6 +29,7 @@ public class PowerUpManager : MonoBehaviour
         isPowerUpActive = true;
         powerUpDuration = duration;
         StartCoroutine(DeactivatePowerUpAfterTime(duration));
+        audioManager.PlaySFX(4);
     }
 
     // Verificar si el power-up está activo

@@ -6,8 +6,11 @@ public class DeathMenu : MonoBehaviour
 {
     [SerializeField] private GameObject deathMenu;
     public SceneLoader sceneLoader;
+    public AudioManager audioManager;
     public void Stop()
     {
+        audioManager.StopMusic();
+        audioManager.PlayMusic(3);
         Time.timeScale = 0f;
         deathMenu.SetActive(true);
     }
