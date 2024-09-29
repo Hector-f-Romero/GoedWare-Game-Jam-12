@@ -10,9 +10,9 @@ public class GivePointsEvent : UnityEvent<int> { }
 
 public class ScoreManager : MonoBehaviour
 {
+    public float _timeAlive { get; private set; } = 0f;
+    public int _playerScore { get; private set; } = 0;
     [Header("Logic")]
-    [SerializeField] private int _playerScore = 0;
-    [SerializeField] private float _timeAlive = 0f;
     private string elapsedFormatTime;
     public AudioManager audioManager;
 
