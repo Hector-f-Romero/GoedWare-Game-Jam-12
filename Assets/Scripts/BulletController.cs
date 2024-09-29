@@ -7,6 +7,7 @@ public class BulletController : MonoBehaviour
     [SerializeField] private float _bulletSpeed = 5f;
     [SerializeField] private float _lifeTime = 8f;
 
+
     [Header("Curve bullet logic")]
     public bool isCurvePowerUpActive = false;
     [SerializeField] private float _curveBulletSpeed = 5f;
@@ -32,6 +33,8 @@ public class BulletController : MonoBehaviour
         // Default bullet movement.
         MoveInStraightLine();
     }
+
+    
 
     private void MoveInStraightLine()
     {

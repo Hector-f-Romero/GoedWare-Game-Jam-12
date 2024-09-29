@@ -8,7 +8,9 @@ public class CurvedBulletsPowerUp : MonoBehaviour
     [Header("Power up logic")]
     [SerializeField] private float _powerUpDuration = 10f;
     [SerializeField] private float _speedFalling = 3.0f;
+    [SerializeField] private float _rotationSpeed = 100.0f;
     [SerializeField] private bool _isActive = false;
+    private Vector3 _directionFall = Vector2.down;
 
     [Header("Player")]
 
@@ -19,9 +21,17 @@ public class CurvedBulletsPowerUp : MonoBehaviour
     void Start()
     {
         _player = GameObject.FindWithTag("Player");
-        
+    }
 
-        
+    private void Update()
+    {
+        PowerUpMovement();
+    }
+
+    private void PowerUpMovement()
+    {
+        this.transform.position += _directionFall * this._speedFalling * Time.deltaTime;
+        this.transform.Rotate(Vector3.forward, _rotationSpeed * Time.deltaTime);
     }
 
     private IEnumerator ActivePowerUp()

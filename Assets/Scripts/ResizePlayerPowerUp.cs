@@ -9,6 +9,7 @@ public class ResizePlayerPowerUp : MonoBehaviour
     [SerializeField] private float _speedFalling = 3.0f;
     [SerializeField] private float _rotationSpeed = 100.0f;
     [SerializeField] private bool _isActive = false;
+    private Vector3 _directionFall = Vector2.down;
 
     [Header("Player")]
     [SerializeField] private float _minPlayerScale = 0.5f;
@@ -18,7 +19,6 @@ public class ResizePlayerPowerUp : MonoBehaviour
     private PlayerController _playerController;
 
 
-    private Vector3 direction = Vector2.down;
     
 
     private GameObject _player;
@@ -34,12 +34,12 @@ public class ResizePlayerPowerUp : MonoBehaviour
 
     private void Update()
     {
-        //PowerUpMovement();
+        PowerUpMovement();
     }
 
     private void PowerUpMovement()
     {
-        this.transform.position += direction * this._speedFalling * Time.deltaTime;
+        this.transform.position += _directionFall * this._speedFalling * Time.deltaTime;
         this.transform.Rotate(Vector3.forward, _rotationSpeed * Time.deltaTime);
     }
 
