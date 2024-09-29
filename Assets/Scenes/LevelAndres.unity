@@ -678,7 +678,7 @@ GameObject:
   - component: {fileID: 1229926537}
   m_Layer: 0
   m_Name: Limite_2
-  m_TagString: Untagged
+  m_TagString: Top
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1024,7 +1024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0360c368fd3b6a408f11a6d4a0e7c2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadMovimiento: {x: 0.1, y: 0}
+  velocidadMovimiento: {x: 0.3, y: 0}
 --- !u!212 &1610668246
 SpriteRenderer:
   m_ObjectHideFlags: 0
